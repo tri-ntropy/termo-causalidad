@@ -127,9 +127,9 @@ def entropia_transferencia(simX, simY):
     
     return ETS
 
-def curva_ets(simX, simY, pasos = 101):
+def serie_ets(simX, simY, pasos):
     """
-    Genera las dos curvas de entropía de transferencia simbólica
+    Genera las dos series de entropía de transferencia simbólica
     T(X->Y) y T(Y->X) sobre un determinado número de pasos
     
     Parámetros
@@ -150,31 +150,32 @@ def curva_ets(simX, simY, pasos = 101):
     for i in range(-1, pasos):
         ets_xy[i + 1] = entropia_transferencia(simX, np.roll(simY, -i))
         ets_yx[i + 1] = entropia_transferencia(simY, np.roll(simX, -i))
-    
+            
     return ets_xy, ets_yx
 
-def curva_ets_simple(simX, pasos = 101):
+def causa(x, y, ct, tv = 3):
     """
-    Genera la curva de entropía de transferencia simbólica
-    T(X->X) sobre un determinado número de pasos
+    Genera las curvas de entropia de transferencia
+    para una realizacion del sistema
     
     Parámetros
     ----------
-    simX : Serie simbólica X
-    pasos : Número de pasos en los cuales se calcula la entropía de
-            transferencia simbólica
+    x : Serie de tiempo de la variable X
+    y : Serie de tiempo de la variable Y
+    ct : Valores de corrimiento de pasos en los cuales
+         se calcula los valores de T(X->Y)
     
     Regresa
     ----------
-    Las arreglos de curvas de entropía de transferencia simbólica
+    Los arreglos de T(X->Y), T(Y->X)
     """
-    # Inicialización
-    ets = np.empty(pasos + 1)
-    # Cálculo de valores
-    for i in range(-1, pasos):
-        ets[i + 1] = entropia_transferencia(simX, np.roll(simX, -i))
+    # Simbolización
+    sim_x = simbolizar(x, tv)
+    sim_y = simbolizar(y, tv)
+    # Curvas de ETS
+    entropia_xy, entropia_yx = serie_ets(sim_x, sim_y, pasos = ct)
     
-    return ets
+    return entropia_xy, entropia_yx 
 
 def probabilidades(simX):
     """
