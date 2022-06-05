@@ -18,7 +18,8 @@ Basta correr cada notebook en el orden que viene numerado.
 * El mallado espacio-temporal se modifica en el notebook #1, donde se determina un ensamble de realizaciones de la condición de frontera, además de otros aspectos básicos. 
 * Los notebook #2 son para realizar pruebas y corroborar que la simulación numérica de cada modelo converge.
 * Los experimentos de los modelos de conducción de calor y los experimentos para validar la metología se encuentran los notebook #3.
-* Finalmente, el cálculo de la Entropia de Transferencia Simbólica, por modelo de conducción y experimento de validación se da en los notebook #4. Es importante indicar sobre que modelo, experimento y variables se calcula la Entropia de Transferencia Simbólica.
+* El notebook #4 sirve para obtener la calibración numérica
+* Finalmente, el cálculo de la Entropia de Transferencia Simbólica, por modelo de conducción y experimento de validación se da en los notebook #5. Es importante indicar sobre que modelo, experimento y variables se calcula la Entropia de Transferencia Simbólica.
 
 ## Información adicional
 
