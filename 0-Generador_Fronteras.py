@@ -38,7 +38,7 @@ desfase = 0.1
 
 # Tiempo
 Lt = 1.0
-nt = 50_001
+nt = 40_001
 t, dt = np.linspace(0, Lt, nt, retstep = True)
 
 # Espacio
@@ -83,7 +83,7 @@ plt.plot(t, frontera[0], alpha = 0.9)
 plt.savefig("graficas/frontera/serie_frontera.pdf", bbox_inches = "tight")
 # plt.show()
 
-# Variación inicial especial de la temperatura
+# Variación inicial espacial de la temperatura
 variacion_inicial = np.random.normal(0, 0.00005, size = (nr, nx))
 variacion_inicial[:, : 3] = variacion_inicial[:, -3 :] = 0
 
