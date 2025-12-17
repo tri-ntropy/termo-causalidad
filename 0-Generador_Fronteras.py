@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # coding: utf-8
 from IPython import display
 import ipywidgets
@@ -32,7 +31,7 @@ def ruido(nr, st, base, desfase):
 # Parámetros
 
 # Fronteras
-nr = 400
+nr = 144
 base = 1.0
 desfase = 0.1
 
